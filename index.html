@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RC Futuro - Cadastro de Clientes</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <img src="logo.png" class="logo" alt="RC Futuro">
+
+    <h1>Cadastro de Clientes</h1>
+
+    <p>
+        Selecione o tipo de cadastro abaixo.
+    </p>
+
+    <div class="botoes">
+
+        <button class="botao" onclick="mostrarPF()">
+            Pessoa Física
+        </button>
+
+        <button class="botao" onclick="mostrarPJ()">
+            Pessoa Jurídica
+        </button>
+
+    </div>
+
+    <div id="pf" class="formulario" style="display:none;">
+
+        <!-- COLE AQUI O HTML DO FORMULÁRIO DE PESSOA FÍSICA -->
+
+    </div>
+
+    <div id="pj" class="formulario" style="display:none;">
+
+        <!-- COLE AQUI O HTML DO FORMULÁRIO DE PESSOA JURÍDICA -->
+
+    </div>
+
+</div>
+
+<script>
+
+function mostrarPF(){
+
+    document.getElementById("pf").style.display="block";
+    document.getElementById("pj").style.display="none";
+
+}
+
+function mostrarPJ(){
+
+    document.getElementById("pj").style.display="block";
+    document.getElementById("pf").style.display="none";
+
+}
+
+</script>
+
+</body>
+</html>

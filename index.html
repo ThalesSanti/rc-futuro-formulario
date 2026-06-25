@@ -1,67 +1,84 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>RC Futuro - Cadastro de Clientes</title>
+
 <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
 
 <div class="container">
 
-    <img src="logo.png" class="logo" alt="RC Futuro">
+<img src="logo.png" class="logo" alt="RC Futuro">
 
-    <h1>Cadastro de Clientes</h1>
+<h1>Cadastro de Clientes</h1>
 
-    <p>
-        Selecione o tipo de cadastro abaixo.
-    </p>
+<p>
+Selecione abaixo o tipo de cadastro.
+</p>
 
-    <div class="botoes">
+<div class="botoes">
 
-        <button class="botao" onclick="mostrarPF()">
-            Pessoa Física
-        </button>
+<button id="btnPF" class="ativo">
+Pessoa Física
+</button>
 
-        <button class="botao" onclick="mostrarPJ()">
-            Pessoa Jurídica
-        </button>
+<button id="btnPJ">
+Pessoa Jurídica
+</button>
 
-    </div>
+</div>
 
-    <div id="pf" class="formulario" style="display:none;">
+<div class="formulario">
 
-        <!-- COLE AQUI O HTML DO FORMULÁRIO DE PESSOA FÍSICA -->
+<iframe
+id="frame"
+src="pf.html"
+frameborder="0">
+</iframe>
 
-    </div>
-
-    <div id="pj" class="formulario" style="display:none;">
-
-        <!-- COLE AQUI O HTML DO FORMULÁRIO DE PESSOA JURÍDICA -->
-
-    </div>
+</div>
 
 </div>
 
 <script>
 
-function mostrarPF(){
+const frame = document.getElementById("frame");
 
-    document.getElementById("pf").style.display="block";
-    document.getElementById("pj").style.display="none";
+const pf = document.getElementById("btnPF");
+
+const pj = document.getElementById("btnPJ");
+
+pf.onclick = function(){
+
+frame.src="pf.html";
+
+pf.classList.add("ativo");
+
+pj.classList.remove("ativo");
 
 }
 
-function mostrarPJ(){
+pj.onclick = function(){
 
-    document.getElementById("pj").style.display="block";
-    document.getElementById("pf").style.display="none";
+frame.src="pj.html";
+
+pj.classList.add("ativo");
+
+pf.classList.remove("ativo");
 
 }
 
 </script>
 
 </body>
+
 </html>
